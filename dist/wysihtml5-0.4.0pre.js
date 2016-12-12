@@ -5729,6 +5729,8 @@ wysihtml5.quirks.cleanPastedHTML = (function() {
       element = wysihtml5.dom.getAsDom(elementOrHtml, context);
     } else {
       element = elementOrHtml;
+      element.innerHTML = element.innerHTML.replace(/img src="http:\/\/yun.duiba.com.cn(.*)"/, "img src=\"//yun.duiba.com.cn$1\"");
+      element.innerHTML = element.innerHTML.replace(/img src="http:\/\/yun.dui88.com(.*)"/, "img src=\"//yun.dui88.com$1\"");
     }
     
     for (i in rules) {
