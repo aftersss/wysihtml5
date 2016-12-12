@@ -6574,6 +6574,9 @@ wysihtml5.quirks.cleanPastedHTML = (function() {
       var el = doc.createElement(this.tagNames[0]);
       if (this.cssClass) {
         el.className = this.cssClass;
+        // wysihtml5 字体颜色的hack
+        var _color = this.cssClass.split('-');
+        el.style.color = _color[_color.length - 1];
       }
       return el;
     },
